@@ -19,7 +19,7 @@ function Login() {
         const { data, error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: 'https://react-supabase-post-8hplgt4tg-eduardo-amaro-maciel.vercel.app/dashboard'
+                redirectTo: 'react-supabase-post-it.vercel.app/dashboard'
             }
         })
     }
