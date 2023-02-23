@@ -5,6 +5,7 @@ import supabase from '../../services/supabse'
 function Login() {
     const [data, setData] = useState(null);
     const navigate = useNavigate()
+    const hostName = window.origin
 
     async function getSession() {
         const { data } = await supabase.auth.getSession()
@@ -19,7 +20,7 @@ function Login() {
         const { data, error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: 'react-supabase-post-it.vercel.app/dashboard'
+                redirectTo: `${hostName}/dashboard`
             }
         })
     }
